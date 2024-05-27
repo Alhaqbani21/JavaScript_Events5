@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="billContainer">
+      <h1>حاسبة الضريبة</h1>
+      <form class="formContainer" action="">
+        <div class="inputContainer">
+          <input placeholder="0.00" id="billInput" class="input" type="text" />
+          <label class="labels" for="">ادخل سعر الفاتورة</label>
+        </div>
+        <div class="resultContainer">
+          <button id="billButton">كم الضريبة</button>
+          <div id="resultTax" class="resultTax">0.00</div>
+        </div>
+        <div class="inputContainer">
+          <input placeholder="0.00" id="fareInput" class="input" type="text" />
+          <label class="labels" for="">كم شخص</label>
+        </div>
+        <div class="resultContainer">
+          <button id="fareButton">احسب القطة</button>
+          <div id="resultFare" class="resultTax">0.00</div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
