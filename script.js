@@ -6,12 +6,20 @@ let resultFare = document.getElementById('resultFare');
 let fareInput = document.getElementById('fareInput');
 
 billButton.addEventListener('click', (event) => {
-  resultTax.innerHTML = billInput.value * 0.15;
   event.preventDefault();
+  resultTax.innerHTML = (parseFloat(billInput.value) * 0.15).toFixed(2);
 });
 
 fareButton.addEventListener('click', (event) => {
   event.preventDefault();
-  let result = billInput.value * 0.15 + parseFloat(billInput.innerHTML);
-  resultFare.innerHTML = result / parseFloat(fareInput.value);
+  let billValue = parseFloat(billInput.value);
+  let taxValue = billValue * 0.15;
+  let fareValue = parseFloat(fareInput.value);
+
+  if (isNaN(billValue) || isNaN(fareValue) || fareValue === 0) {
+    resultFare.innerHTML = 'Invalid input';
+  } else {
+    let result = (billValue + taxValue) / fareValue;
+    resultFare.innerHTML = result.toFixed(2);
+  }
 });
